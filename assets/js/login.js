@@ -36,23 +36,23 @@ $('#register .layui-form').on('submit',function(e){
 
 // //点击登录按钮
 $('#login .layui-form').on('submit',function(e){
-//阻止默认行为
-e.preventDefault();
-//获取用户名，密码
-var data=$(this).serialize();
-$.ajax({
-    type:'post',
-    url:'http://www.liulongbin.top:3007/api/login',
-    data:data,
-    success:function(backdata){
-        console.log(backdata);
-        // alert(backdata.message);
-        layer.msg(backdata.message);
-        localStorage.setItem('token',backdata.token);
-        if(backdata.status==0){
-            // window.location.href='/index.html';
+    //阻止默认行为
+    e.preventDefault();
+    //获取用户名，密码
+    var data=$(this).serialize();
+    $.ajax({
+        type:'post',
+        url:'http://www.liulongbin.top:3007/api/login',
+        data:data,
+        success:function(backdata){
+            console.log(backdata);
+            // alert(backdata.message);
+            layer.msg(backdata.message);
+            localStorage.setItem('token',backdata.token);
+            if(backdata.status==0){
+                window.location.href='/index.html';
+            }
         }
-    }
 })
 })
 

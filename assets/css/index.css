@@ -1,0 +1,30 @@
+.touxiang {
+    display: inline-block;
+    height: 60px;
+    padding-left: 20px;
+    line-height: 60px;
+
+}
+.layui-icon {
+    padding-right: 8px;
+    font-size: 16px;
+}
+.touxiang {
+    font-size: 12px;
+}
+.bigName {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #009688;
+    border-radius: 50%;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    display: none;
+}
+.layui-nav-img {
+    width: 40px;
+    height: 40px;
+}
