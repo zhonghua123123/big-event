@@ -18,7 +18,7 @@ $(function(){
     })
 })
 
-// 在入口函数里封装个全局函数
+// 在入口函数外封装个全局函数
 function getMessage (){
     $.ajax({
         url:'http://www.liulongbin.top:3007/my/userinfo',
@@ -26,7 +26,7 @@ function getMessage (){
             Authorization:localStorage.getItem('token')
         },
         success:function(backdata){
-            console.log(backdata);
+            // console.log(backdata);
             if(backdata.status==0){
                 var myname=backdata.data.nickname || backdata.data.username;
                 $('.my-name').text(myname);
@@ -45,7 +45,7 @@ function getMessage (){
         // 有token，但是是假的
         // complete请求不管成功还是失败，都执行下面函数
         complete:function(xhr){
-            console.log(xhr);
+            // console.log(xhr);
             if(xhr.responseJSON.status==1){
                 localStorage.removeItem('token');
                 window.location.href='/login.html';
