@@ -1,10 +1,7 @@
 // 封装全局函数
 function getBasic(){
     $.ajax({
-        url:'http://www.liulongbin.top:3007/my/userinfo',
-        headers:{
-            'Authorization':localStorage.getItem('token')
-        },
+        url:'/my/userinfo',
         success:function(backdata){
             // console.log(backdata);
             if(backdata.status==0){
@@ -16,13 +13,6 @@ function getBasic(){
                 
             }
             
-        },
-        complete:function(xhr){
-            // console.log(xhr);
-            if(xhr.responseJSON.status==1){
-                localStorage.removeItem('token');
-                window.parent.location.href='/login.html';
-            }
         }
     })
 }
@@ -38,11 +28,8 @@ $(function(){
         console.log(data);
         $.ajax({
             type:'post',
-            url: 'http://www.liulongbin.top:3007/my/userinfo',
+            url: '/my/userinfo',
             data:data,
-            headers:{
-                'Authorization':localStorage.getItem('token')
-            },
             success:function(backdata){
                 if(backdata.status==0){
                     layer.msg(backdata.message);
@@ -50,13 +37,6 @@ $(function(){
                     window.parent.getMessage ();
                 }
                 
-            },
-            complete:function(xhr){
-                // console.log(xhr);
-                if(xhr.responseJSON.status==1){
-                    localStorage.removeItem('token');
-                    window.parent.location.href='/login.html';
-                }
             }
         })
         

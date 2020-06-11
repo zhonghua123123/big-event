@@ -29,28 +29,15 @@ $('form').on('submit',function(e){
     
     $.ajax({
         type:'post',
-        url:'http://www.liulongbin.top:3007/my/updatepwd',
+        url:'/my/updatepwd',
         data:data,
-        headers:{
-            'Authorization':localStorage.getItem('token')
-        },
         success:function(backdata){
             layer.msg(backdata.message); 
             if(backdata.status==0){//成功
                 //重置表单 reset(),dom对象 $('form')[0]转成dom对象
                 $('form')[0].reset();
             }
-        },
-        //下面验证token假的或失效
-        complete:function(xhr){
-            if(xhr.responseJSON.status==1){
-                localStorage.removeItem('token');
-                window.parentlocation.href='/login.html';
-            }
-            
         }
-
-        
     })
 })
 
