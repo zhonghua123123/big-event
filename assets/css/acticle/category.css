@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;/*两端对齐*/
+    align-items: center;/*垂直对齐*/
+}
+#form_add {
+    margin-right:30px;
+    margin-top: 20px;
+}
+#form_edit {
+    margin-right:30px;
+    margin-top: 20px;
+
+}

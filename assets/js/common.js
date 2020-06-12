@@ -1,7 +1,7 @@
 $(function(){
     //每次发送ajax，会被$.ajaxPrefilter()拦截
     $.ajaxPrefilter(function(option){
-        console.log(option);
+        // console.log(option);
         option.url='http://www.liulongbin.top:3007'+option.url;
         option.headers={
             Authorization:localStorage.getItem('token')
